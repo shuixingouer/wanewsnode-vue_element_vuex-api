@@ -1,11 +1,11 @@
 <template>
   <div class="list">
-    <div  v-for="item in listData">
+    <div v-for="item in listData">
       <el-row :gutter="20" :key="item.id"  v-if=" item.showStyle == 0 ">
         <router-link :to="{ path: cooperateStatus(item.cooperateStatus, item) }">
           <el-card :body-style="{ margin:'20px 25px',padding:'0', overflow:'hidden', position:'relative' }">
             <el-col :span="24">
-              <div class="title">{{item.title}}</div>
+              <div v-html="item.title" :class="[item.type == 4 ? 'title_joke':'title']"></div>
               <div class="bottom clearfix">
                 <div class="time">{{item.webName}}{{item.createdAt}}</div>
               </div>
@@ -165,8 +165,7 @@
   .list{
     margin-top:100px;
     box-sizing:border-box;
-    overflow:auto;
-    width:100%;
+    overflow-x:hidden;
   .el-card{
     border:none;
   }
@@ -202,7 +201,7 @@
   }
   .title{
     font-size:16px;
-    color:#000;
+    color:#333;
     line-height:24px;
     max-height:48px;
     margin-bottom:20px;
@@ -212,6 +211,12 @@
     display:-webkit-box;
     -webkit-line-clamp:2;
     -webkit-box-orient:vertical
+  }
+  .title_joke{
+    font-size:17px;
+    color:#666;
+    line-height:26px;
+    margin-bottom:20px;
   }
   .bottom{
     position:absolute;

@@ -1,0 +1,15 @@
+@charset "utf-8";
+body,h1,h2,h3,h4,h5,h6,p,blockquote,dl,dt,dd,ul,ol,li,pre,fieldset,lengend,button,input,textarea,th,td {margin: 0;padding: 0;}
+body,div,p,h2,h1,h3,h4,span,button,input,select,textarea {font-family: Microsoft Yahei,Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;}
+h4,h5,h6 { font-size: 100%;}
+a {color:#000;text-decoration:none;cursor: pointer;}
+a:hover { text-decoration:none;}
+img { border:0 none; }
+table {border-collapse: collapse;border-spacing: 0;}
+td,th { border: 1px solid #ccc;}
+input{vertical-align:middle;outline:none;}
+input::-webkit-input-placeholder { color:#CCC;font-family:Microsoft Yahei,Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;}
+em{font-style: normal;}
+.cf:before, .cf:after {content:"";display:table;}
+.cf:after {clear:both;}
+.cf {zoom:1;}
