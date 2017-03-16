@@ -1,38 +1,37 @@
 <template>
   <div class="channel-menu">
-    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-      <el-menu-item v-for="item in channel" :key="item.channelId" :index="item.channelId" @click="cutOff(item.channelId)">{{item.channelName}}</el-menu-item>
-    </el-menu>
+  {{channelMenu}}
   </div>
 </template>
 
 <script>
-import { bus } from '../bus.js'
+import { getChannelMenu } from '../vuex/actions'
+import { channelMenu } from '../vuex/getters'
 export default {
   name: 'channelmenu',
-  data () {
-    return {
-      activeIndex: '0',
-      isActive: 0,
-      channel: []
+  vuex: {
+    getters: {
+      channelMenu: channelMenu
+    },
+    actions: {
+      getChannelMenu
+    }
+  },
+  route: {
+    data (transition) {
     }
   },
   created () {
-    this.getLists()
+    this.getChannelMenu()
+    console.log('/************************/')
+  },
+  data () {
+    return {
+    }
   },
   methods: {
-    handleSelect (key, keyPath) {
-      console.log(key, keyPath)
-    },
-    cutOff: function (index) {
-      this.isActive = index
-      bus.$emit('tip', index)
-    },
-    getLists: function () {
-      this.$http.post('/api/wap2/channel/list', {}).then((response) => {
-        this.channel = response.body.data
-      })
-    }
+  },
+  components: {
   }
 }
 </script>
