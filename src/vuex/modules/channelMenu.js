@@ -1,12 +1,12 @@
-import { SET_CHANNEL_MENU } from '../mutation-types'
+import { SET_CHANNEL_MENU } from '../mutations'
 
 const state = {
-  menu: ''
+  channelMenu: ''
 }
 
 const mutations = {
   [SET_CHANNEL_MENU] (state, newMenu) {
-    state.menu = newMenu
+    state.channelMenu = newMenu
   }
 }
 
@@ -14,3 +14,4 @@ export default {
   state,
   mutations
 }
+

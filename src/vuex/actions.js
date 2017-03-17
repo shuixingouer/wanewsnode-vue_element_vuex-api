@@ -1,13 +1,7 @@
-import Api from '../api'
-import * as types from './mutation-types'
-
-export const getChannelMenu = ({ dispatch }, params) => {
-  Api.getChannelMenu(params).then(response => {
-    console.log(response.data)
-    dispatch(types.SET_CHANNEL_MENU, response.data)
-  }, err => {
-    console.log(err)
-  })
+export default {
+  setChannelMenu: function ({commit}, params) {
+    commit('SET_CHANNEL_MENU', params)
+  }
 }
 
 // export const getTopics = ({ dispatch }, params) => {

@@ -5,29 +5,27 @@
 </template>
 
 <script>
-import { getChannelMenu } from '../vuex/actions'
-import { channelMenu } from '../vuex/getters'
 export default {
   name: 'channelmenu',
-  vuex: {
-    getters: {
-      channelMenu: channelMenu
-    },
-    actions: {
-      getChannelMenu
-    }
-  },
-  route: {
-    data (transition) {
+  data () {
+    return {
+      channelMenu: []
     }
   },
   created () {
-    this.getChannelMenu()
+    if (this.$store.state.channelMenu.length === 0) {
+      // 请求服务器获取数据
+      this.$http.post('/api/wap2/channel/list').then(function (res) {
+        this.$store.state.channelMenu = res.body
+        console.log('/*******成功了吗*****************/')
+      }, function (res) {
+        // 请求失败处理
+      })
+    }
     console.log('/************************/')
   },
-  data () {
-    return {
-    }
+  mounted () {
+    this.channelMenu = this.$store.getters.setChannelMenu
   },
   methods: {
   },

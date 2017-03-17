@@ -8,6 +8,7 @@ import './assets/css/reset.css'
 import router from './router'
 import VueResource from 'vue-resource'
 import VueLazyload from 'vue-lazyload'
+import store from './vuex/store'
 import App from './App'
 import Error from './assets/images/error.png'
 import Loading from './assets/images/loading.png'
@@ -25,6 +26,6 @@ Vue.use(VueLazyload, {
 new Vue({
   el: '#app',
   router,
-  template: '<App/>',
-  components: { App }
+  store,
+  render: h => h(App)
 })

@@ -1,2 +1,3 @@
-export const channelMenu = (state) => state.channelMenu.menu
-// export const Topics = (state) => state.topics.topics
+export default {
+  getChannelMenu: state => state.channelMenu
+}
