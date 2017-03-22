@@ -8,7 +8,7 @@ Vue.use(VueResource)
 // const baseUrl = 'http://cnodejs.org/api/v1/'
 
 export default {
-  getChannelMenu: (params) => {
+  setChannelMenu: (params) => {
     return Vue.resource('/api/wap2/channel/list').post(params)
   }
 }

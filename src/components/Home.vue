@@ -11,8 +11,17 @@
 <script>
 import list from './List'
 import channelMenu from './ChannelMenu'
+import { mapGetters } from 'vuex'
 export default {
   name: 'home',
+  computed: {
+    ...mapGetters({
+      channelMenu: 'getChannelMenu'
+    })
+  },
+  mounted () {
+    this.$store.dispatch('setChannelMenu')
+  },
   components: {
     channelMenu,
     list

@@ -1,37 +1,27 @@
 <template>
   <div class="channel-menu">
-  {{channelMenu}}
+    <!--<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">-->
+      <!--<el-menu-item v-for="item in channelMenu" :key="item.channelId" :index="item.channelId">{{item.channelName}}</el-menu-item>-->
+    <!--</el-menu>-->
+    <el-menu class="el-menu-demo">
+    <el-menu-item v-for="item in items" :item="item" :key="item" :index="item.channelId">{{item.channelName}}</el-menu-item>
+    </el-menu>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'channelmenu',
-  data () {
-    return {
-      channelMenu: []
+  export default {
+    name: 'channelmenu',
+    props: {
+      items: {
+        type: Array,
+        required: true
+      }
+    },
+    data () {
+      return {}
     }
-  },
-  created () {
-    if (this.$store.state.channelMenu.length === 0) {
-      // 请求服务器获取数据
-      this.$http.post('/api/wap2/channel/list').then(function (res) {
-        this.$store.state.channelMenu = res.body
-        console.log('/*******成功了吗*****************/')
-      }, function (res) {
-        // 请求失败处理
-      })
-    }
-    console.log('/************************/')
-  },
-  mounted () {
-    this.channelMenu = this.$store.getters.setChannelMenu
-  },
-  methods: {
-  },
-  components: {
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

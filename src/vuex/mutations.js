@@ -1,8 +1,0 @@
-export const SET_CHANNEL_MENU = 'SET_CHANNEL_MENU'
-
-export const GET_TOPICS_SUCCESS = 'GET_TOPICS_SUCCESS'
-export const GET_TOPICS_FAIL = 'GET_TOPICS_FAIL'
-export default {
-
-}
-
