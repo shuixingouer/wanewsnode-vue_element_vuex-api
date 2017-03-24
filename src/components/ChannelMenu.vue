@@ -3,8 +3,8 @@
     <!--<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">-->
       <!--<el-menu-item v-for="item in channelMenu" :key="item.channelId" :index="item.channelId">{{item.channelName}}</el-menu-item>-->
     <!--</el-menu>-->
-    <el-menu class="el-menu-demo">
-    <el-menu-item v-for="item in items" :item="item" :key="item" :index="item.channelId">{{item.channelName}}</el-menu-item>
+    <el-menu class="el-menu-demo" mode="horizontal">
+      <el-menu-item v-for="item in items" :key="item" index="item.channelId">{{item}}</el-menu-item>
     </el-menu>
   </div>
 </template>

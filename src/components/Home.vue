@@ -2,7 +2,7 @@
   <div class="home">
     <div class="header_menu">
       <img class="logo" src="./../assets/images/logo.png">
-      <channel-menu></channel-menu>
+      <channel-menu :items="channelMenu"></channel-menu>
     </div>
     <list></list>
   </div>
@@ -19,7 +19,7 @@ export default {
       channelMenu: 'getChannelMenu'
     })
   },
-  mounted () {
+  created () {
     this.$store.dispatch('setChannelMenu')
   },
   components: {

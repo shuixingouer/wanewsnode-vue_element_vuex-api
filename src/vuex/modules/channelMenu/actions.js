@@ -32,11 +32,11 @@ const _post = ({ url, query }, commit) => {
 export const setChannelMenu = ({ commit }) => {
   const url = '/wap2/channel/list'
   return _post({ url }, commit).then((json) => {
-    if (json.status === 0) {
-      console.log(1)
+    console.log(json.status)
+    if (json.status === 'SUCESS') {
+      console.log(json.data[0])
       return commit('CHANNEL_MENU', json.data)
     }
-    console.log(json.data)
     return Promise.reject(new Error('CHANNEL_MENU failure'))
   }).catch((error) => {
   // commit('FETCH_TOPIC_LISTS_FAILURE', topicTab, page)
