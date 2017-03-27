@@ -2,7 +2,7 @@
   <div class="home">
     <div class="header_menu">
       <img class="logo" src="./../assets/images/logo.png">
-      <channel-menu :items="channelMenu"></channel-menu>
+      <channel-menu :menus="channelMenus"></channel-menu>
     </div>
     <list></list>
   </div>
@@ -12,15 +12,16 @@
 import list from './List'
 import channelMenu from './ChannelMenu'
 import { mapGetters } from 'vuex'
+
 export default {
   name: 'home',
   computed: {
     ...mapGetters({
-      channelMenu: 'getChannelMenu'
+      channelMenus: 'getChannelMenus'
     })
   },
   created () {
-    this.$store.dispatch('setChannelMenu')
+    this.$store.dispatch('setChannelMenus')
   },
   components: {
     channelMenu,

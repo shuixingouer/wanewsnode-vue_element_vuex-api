@@ -4,7 +4,7 @@
       <!--<el-menu-item v-for="item in channelMenu" :key="item.channelId" :index="item.channelId">{{item.channelName}}</el-menu-item>-->
     <!--</el-menu>-->
     <el-menu class="el-menu-demo" mode="horizontal">
-      <el-menu-item v-for="item in items" :key="item" index="item.channelId">{{item}}</el-menu-item>
+      <el-menu-item v-for="menu in menus" :key="menu" index="menu.channelId">{{menu.channelName}}</el-menu-item>
     </el-menu>
   </div>
 </template>
@@ -13,13 +13,8 @@
   export default {
     name: 'channelmenu',
     props: {
-      items: {
-        type: Array,
-        required: true
+      menus: {
       }
-    },
-    data () {
-      return {}
     }
   }
 </script>

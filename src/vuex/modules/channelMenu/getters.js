@@ -1,1 +1,2 @@
-export const getChannelMenu = state => state.channelMenu
+export const getChannelMenus = state => state.channelMenus
+

@@ -29,7 +29,7 @@ const _post = ({ url, query }, commit) => {
  * @param  {Number} count             每页数量
  * @return {Promise}                  Promise
  */
-export const setChannelMenu = ({ commit }) => {
+export const setChannelMenus = ({ commit }) => {
   const url = '/wap2/channel/list'
   return _post({ url }, commit).then((json) => {
     console.log(json.status)
